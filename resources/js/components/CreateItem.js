@@ -5,6 +5,7 @@ import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
 // history.pushState(state, title[, url])
 // window.history.pushState("http://example.ca", "Sample Title", "/example/path.html");
+
 function SignupForm() {
     let navigate = useNavigate();
     function handleClick() {

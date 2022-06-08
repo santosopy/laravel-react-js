@@ -80,6 +80,7 @@ class ItemController extends Controller
         $item->name = $request->get("name");
         $item->price = $request->get("price");
         $item->save();
+        
         return response()->json("success updated");
     }
 
