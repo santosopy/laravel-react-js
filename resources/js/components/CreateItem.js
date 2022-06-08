@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 
 const history = createBrowserHistory();
-// history.pushState(state, title[, url])
-// window.history.pushState("http://example.ca", "Sample Title", "/example/path.html");
 
 function SignupForm() {
     let navigate = useNavigate();
@@ -13,7 +11,7 @@ function SignupForm() {
     }
     return (
         <div>
-            <button onClick={handleClick}>go home</button>
+            <button id="display" onClick={handleClick} className="hidden">go home</button>
         </div>
     )
 }
@@ -45,10 +43,8 @@ class CreateItem extends Component {
         }
         let uri = window.location.origin + '/items';
         axios.post(uri, products).then((response) => {
-            // history.push('/display-item');
-            // console.log(React.useRef())
-            <SignupForm />
-        });
+            document.querySelector('#display').click()
+        })
     }
     render() {
         return (
@@ -75,7 +71,7 @@ class CreateItem extends Component {
                         <button className="btn btn-primary">Add Item</button>
                     </div>
                 </form>
-                
+                <SignupForm />
             </div>
         )
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class ItemController extends Controller
 {
@@ -52,7 +53,7 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json("success added");
     }
 
     /**
@@ -80,7 +81,7 @@ class ItemController extends Controller
         $item->name = $request->get("name");
         $item->price = $request->get("price");
         $item->save();
-        
+
         return response()->json("success updated");
     }
 
